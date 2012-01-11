@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #include "tiling.h"
 #include "SDL/SDL_image.h"
 const int SCREEN_WIDTH = 600;
@@ -11,7 +10,6 @@ struct TMouse
 	int x;
 	int y;
 };
-=======
 #include "SDL/SDL.h"
 #include <string>
 #include "SDL/SDL_image.h"
@@ -19,13 +17,10 @@ struct TMouse
 const int SCREEN_WIDTH = 480;
 const int SCREEN_HEIGHT = 640;
 const int SCREEN_BPP = 32;
->>>>>>> 513ee2e6de5ebb2ab3760918f4926f200d205578
 
 SDL_Surface* SDL_screen = NULL;
 
 SDL_Event event;
-
-<<<<<<< HEAD
 
 
 bool init()
@@ -39,8 +34,6 @@ bool init()
     return true;
 } 
 
-=======
->>>>>>> 513ee2e6de5ebb2ab3760918f4926f200d205578
 SDL_Surface* load_image(std::string filename)
 {
     SDL_Surface* loadedImage = NULL;
@@ -51,19 +44,16 @@ SDL_Surface* load_image(std::string filename)
         optimizedImage = SDL_DisplayFormat(loadedImage);
         SDL_FreeSurface(loadedImage);
     }
-<<<<<<< HEAD
     // if(optimizedImage != NULL)
     // {
         // Uint32 colorkey = SDL_MapRGB(optimizedImage->format, 0, 0xFF, 0xFF);
         // SDL_SetColorKey(optimizedImage, SDL_SRCCOLORKEY, colorkey);
     // }
-=======
     if(optimizedImage != NULL)
     {
         Uint32 colorkey = SDL_MapRGB(optimizedImage->format, 0, 0xFF, 0xFF);
         SDL_SetColorKey(optimizedImage, SDL_SRCCOLORKEY, colorkey);
     }
->>>>>>> 513ee2e6de5ebb2ab3760918f4926f200d205578
     return optimizedImage;
 }
 
@@ -74,9 +64,7 @@ void apply_surface(int x, int y, SDL_Surface* source,
     offset.x = x;
     offset.y = y;
     SDL_BlitSurface(source, clip, destination, &offset);
-<<<<<<< HEAD
 }
-=======
 }
 
 bool init()
@@ -88,6 +76,3 @@ bool init()
         return false;
     return true;
 }
-
-
->>>>>>> 513ee2e6de5ebb2ab3760918f4926f200d205578

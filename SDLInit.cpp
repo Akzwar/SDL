@@ -1,5 +1,4 @@
 #include "SDLInit.h"
-<<<<<<< HEAD
 #include <cstdio>
 TMouse Mouse;
 int main(int arg, char* args[])
@@ -23,7 +22,6 @@ int main(int arg, char* args[])
 				World->Tile[i][j]->Texture = load_image("1.png");
 			}
     bool quit=false;
-=======
 
 int main(int arg, char* args[])
 {   
@@ -32,15 +30,12 @@ int main(int arg, char* args[])
     {
         return 1;
     }
-    
->>>>>>> 513ee2e6de5ebb2ab3760918f4926f200d205578
     while(quit==false)
     {
         while(SDL_PollEvent(&event))
         {
             if(event.type == SDL_QUIT)
                 quit=true;
-<<<<<<< HEAD
 			if( event.type == SDL_MOUSEBUTTONDOWN )
 				{ 
 					if( event.button.button == SDL_BUTTON_LEFT )
@@ -81,19 +76,16 @@ int main(int arg, char* args[])
 						apply_surface(World->Tile[i][j]->x-World->Camera.x,World->Tile[i][j]->y-World->Camera.y,World->Tile[i][j]->Texture,SDL_screen);
 					  }
 				}
-		//apply_surface(World->Camera->x,World->Camera->y,World->World->Camera->Texture,SDL_screen);
         if(SDL_Flip(SDL_screen) == -1)
             return 1;
     }  
-	// delete World;
-=======
+    delete World;
         }
         Uint8 *keystates = SDL_GetKeyState( NULL );
 	
         if(SDL_Flip(SDL_screen) == -1)
             return 1;
     }  
->>>>>>> 513ee2e6de5ebb2ab3760918f4926f200d205578
     SDL_Quit();
     return 0;
 }
